@@ -1,9 +1,15 @@
 const MusicTable = ({}) => {
-  const labels = ["Title", "Artist", "Album", "Genre", "Release Date"];
-  const labelItems = labels.map((label, i) => <div key={i}>{label}</div>);
+  const songs = [];
+  const songItems = songs.map((song, i) => <div key={i}>{song}</div>);
   return (
     <div>
-      <div>{labelItems}</div>
+      <tr>
+        <td>Title</td>
+        <td>Artist</td>
+        <td>Album</td>
+        <td>Genre</td>
+        <td>Release Date</td>
+      </tr>
     </div>
   );
 };
