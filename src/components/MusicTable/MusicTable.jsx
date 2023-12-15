@@ -1,15 +1,20 @@
-const MusicTable = ({}) => {
-  const songs = [];
-  const songItems = songs.map((song, i) => <div key={i}>{song}</div>);
+const MusicTable = ({ songs = [] }) => {
+  console.log(songs);
+  const songItems = songs.map((song, i) => <tr key={i}>{song.title}</tr>);
   return (
     <div>
-      <tr>
-        <td>Title</td>
-        <td>Artist</td>
-        <td>Album</td>
-        <td>Genre</td>
-        <td>Release Date</td>
-      </tr>
+      <table className="table flex-item">
+        <thead>
+          <tr>
+            <td>{songs.title}</td>
+            <td>{songs.artist}</td>
+            <td>Album</td>
+            <td>Genre</td>
+            <td>Release Date</td>
+          </tr>
+        </thead>
+      </table>
+      <tbody>{songItems}</tbody>
     </div>
   );
 };

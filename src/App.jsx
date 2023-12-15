@@ -9,7 +9,7 @@ function App() {
   const fetchSongs = async () => {
     try {
       const response = await axios.get("https://localhost:7257/api/Songs");
-      // console.log(response);
+      console.log(response);
       setSongs(response.data);
     } catch (error) {
       console.warn("Error in fetchSongs request: ", error);
@@ -21,8 +21,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-
-      <MusicTable />
+      <div className="flex-container">
+        <MusicTable songs={songs} />
+      </div>
     </div>
   );
 }
