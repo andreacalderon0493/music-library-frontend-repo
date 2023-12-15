@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import MusicTable from "./components/MusicTable/MusicTable";
 import axios from "axios";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <SearchBar />
       <div className="flex-container">
         <MusicTable songs={songs} />
       </div>

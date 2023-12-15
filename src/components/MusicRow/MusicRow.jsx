@@ -8,7 +8,10 @@ const MusicRow = ({ music }) => {
       <td>{music.album}</td>
       <td>{music.genre}</td>
       <td>{music.releaseDate}</td>
-      <td>{music.like}</td>
+      <button type="button" class="btn btn-primary">
+        Like
+      </button>
+      {/* <td>{music.like}</td> */}
       <td>{music.playlist}</td>
     </tr>
   );
