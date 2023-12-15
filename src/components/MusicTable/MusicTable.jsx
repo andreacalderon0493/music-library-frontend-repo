@@ -1,20 +1,24 @@
+import MusicRow from "../MusicRow/MusicRow";
+
 const MusicTable = ({ songs = [] }) => {
   console.log(songs);
-  const songItems = songs.map((song, i) => <tr key={i}>{song.title}</tr>);
+  const songItems = songs.map((song, i) => <MusicRow key={i} music={song} />);
   return (
     <div>
       <table className="table flex-item">
         <thead>
           <tr>
-            <td>{songs.title}</td>
-            <td>{songs.artist}</td>
-            <td>Album</td>
-            <td>Genre</td>
-            <td>Release Date</td>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th>Like</th>
+            <th>Playlist</th>
           </tr>
         </thead>
+        <tbody>{songItems}</tbody>
       </table>
-      <tbody>{songItems}</tbody>
     </div>
   );
 };
