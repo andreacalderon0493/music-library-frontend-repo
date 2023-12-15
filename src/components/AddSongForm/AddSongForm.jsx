@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 
-const AddSongForm = ({}) => {
+const AddSongForm = ({ onNewSong }) => {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [album, setAlbum] = useState("");
   const [genre, setGenre] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+      title,
+      artist,
+      album,
+      genre,
+      releaseDate,
+    };
+    onNewSong(formData);
+  };
   return (
-    <form className="flex-item">
+    <form onSubmit={handleSubmit} className="flex-item">
       <h4>Add Song</h4>
       <div>
         <label> Title</label>
@@ -33,6 +44,7 @@ const AddSongForm = ({}) => {
           onChange={(e) => setReleaseDate(e.target.value)}
         />
       </div>
+      <button type="submit">Add Song</button>
     </form>
   );
 };

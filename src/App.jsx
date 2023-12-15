@@ -8,6 +8,11 @@ import AddSongForm from "./components/AddSongForm/AddSongForm";
 
 function App() {
   const [songs, setSongs] = useState([]);
+
+  const handleNewSong = (newSong) => {
+    const updatedSongs = [...songs, newSong];
+    setSongs(updatedSongs);
+  };
   const fetchSongs = async () => {
     try {
       const response = await axios.get("https://localhost:7257/api/Songs");
@@ -26,7 +31,7 @@ function App() {
       <SearchBar />
       <div className="flex-container">
         <MusicTable songs={songs} />
-        <AddSongForm />
+        <AddSongForm onNewSong={handleNewSong} />
       </div>
     </div>
   );
