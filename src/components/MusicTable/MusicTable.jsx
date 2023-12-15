@@ -1,7 +1,6 @@
 import MusicRow from "../MusicRow/MusicRow";
 
 const MusicTable = ({ songs = [] }) => {
-  console.log(songs);
   const songItems = songs.map((song, i) => <MusicRow key={i} music={song} />);
   return (
     <div>

@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import MusicTable from "./components/MusicTable/MusicTable";
 import axios from "axios";
 import SearchBar from "./components/SearchBar/SearchBar";
+import AddSongForm from "./components/AddSongForm/AddSongForm";
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -25,6 +26,7 @@ function App() {
       <SearchBar />
       <div className="flex-container">
         <MusicTable songs={songs} />
+        <AddSongForm />
       </div>
     </div>
   );
