@@ -8,13 +8,22 @@
     display: flex;
     padding: 20px 50px;
     gap: 10px;
+    align-items: center;
+    align-content: center;
 }
 .flex-item {
-    background-color: lightgray;
-    flex: 1;
+    background-color: rgb(127 85 86);
+    flex: 2;
     justify-content: space-between;
+    margin: 2;
+    padding: 5px;
+   
 }
 td {
-    background-color: lavenderblush;
-
+    background-color: rgb(142 118 117);
+    border-left: 2px solid black;
+	border-bottom: 2px solid black;
+	padding: 5px;
+    margin: 5px;
+    color: whitesmoke;
 }

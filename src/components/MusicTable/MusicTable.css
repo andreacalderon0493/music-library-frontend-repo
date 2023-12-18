@@ -1,0 +1,23 @@
+.table {
+	width: 100%;
+	border-spacing: 0;
+	border: 1px solid black;
+	border-left: none;
+	border-bottom: none;
+}
+
+.table td,
+.table th {
+	border-left: 2px solid black;
+	border-bottom: 2px solid black;
+	padding: 5px;
+}
+
+.table tr {
+	margin: 0;
+}
+
+.table th {
+	text-align: left;
+}
+

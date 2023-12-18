@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import "./AddSongForm.css";
 
 const AddSongForm = ({ onNewSong }) => {
   const [title, setTitle] = useState("");
@@ -7,7 +9,7 @@ const AddSongForm = ({ onNewSong }) => {
   const [genre, setGenre] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
       title,
@@ -16,10 +18,22 @@ const AddSongForm = ({ onNewSong }) => {
       genre,
       releaseDate,
     };
-    onNewSong(formData);
+    try {
+      const response = await axios.post(
+        "https://localhost:7257/api/Songs",
+        formData
+      );
+      if (response.status === 201) {
+        onNewSong();
+      }
+    } catch (error) {
+      console.warn("Error submitting new Song form: ", error);
+      console.log(formData);
+    }
   };
+
   return (
-    <form onSubmit={handleSubmit} className="flex-item">
+    <form onSubmit={handleSubmit} className="form flex-item ">
       <h4>Add Song</h4>
       <div>
         <label> Title</label>
@@ -42,9 +56,12 @@ const AddSongForm = ({ onNewSong }) => {
         <input
           value={releaseDate}
           onChange={(e) => setReleaseDate(e.target.value)}
+          type="date"
         />
       </div>
-      <button type="submit">Add Song</button>
+      <button className="form-button" type="submit">
+        Add Song
+      </button>
     </form>
   );
 };

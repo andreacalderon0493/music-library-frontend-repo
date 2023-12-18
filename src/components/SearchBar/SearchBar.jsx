@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const SearchBar = ({}) => {
+const SearchBar = ({ onSearch }) => {
   const [search, setSearch] = useState("");
 
   return (
-    <form className="flex-item">
-      <div>
+    <form>
+      <div className="search">
         <label> Search</label>
-        <input value={search} onChange={(e) => setSearch(e.target.value)} />
+        <input
+          value={search}
+          onChange={(e) =>
+            setSearch(e.target.value) || onSearch(e.target.value)
+          }
+        />
       </div>
     </form>
   );

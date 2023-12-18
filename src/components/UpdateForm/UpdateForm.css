@@ -1,0 +1,19 @@
+.form {
+    display: flex;
+	flex-direction: column;
+	width: 300px;
+	gap: 10px;
+}
+.form button {
+	padding: 4px;
+	border-radius: 2px;
+	color: #394d14;
+    background: #cdbca3;
+    border: revert-layer;
+	width: 85px;
+}
+
+.form button:hover {
+	cursor: pointer;
+	background-color: rgba(139, 166, 139, 0.9);
+}
